@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <link
+      rel="shortcut icon"
+      href="https://pbs.twimg.com/profile_images/1683325380441128960/yRsRRjGO_400x400.jpg"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="main-body">
+      <nav>
+        <a href="#"> <img src="/static/image/user_1177568.png" alt="" /></a>
+        <a href="#">
+          <img
+            src="https://freelogopng.com/images/all_img/1690643591twitter-x-logo-png.png"
+            alt=""
+        /></a>
+        <a href="#"> <i class="fa-solid fa-gear"></i> </a>
+      </nav>
+      <form action="/" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <section>
+          <div>
+            <input type="text" placeholder="Name" required name="name" />
+            <textarea
+              type="text"
+              placeholder="Tell us something!"
+              required
+              name="body"
+            ></textarea>
+          </div>
+          <main>
+            <span>
+              <i class="fas fa-images"></i>
+              <input type="file" name="image" id="image" />
+            </span>
+            <input type="submit" value="Post" />
+          </main>
+        </section>
+      </form>
+      {% for p in post%}
+      <div class="sub-body" >
+        
+        <div class="title">
+          
+          <img
+            src="https://cdn-icons-png.freepik.com/256/1144/1144709.png?uid=R137214712&ga=GA1.1.353334366.1706510823&"
+            alt=""
+          />
+          <div>
+            <main>
+              <span>
+                {{p.name}}
+                <img src="/static/image/free_icon_1.svg" alt="" />
+                <span> @{{p.name}} </span>
+              </span>
+
+              <span style="position: relative;">
+                <div class="dots">
+                  <i class="fa-solid fa-ellipsis"></i>
+                </div>
+                <section class="edit">
+                  <div><i class="fa-solid fa-trash" ></i> <a href="/delete/{{ p.id }}/">Delete</a></div>
+                  <div><i class="fa-solid fa-pen-to-square" ></i> <a href="/edit/{{ p.id }}/">Edit</a></div>
+                </section>
+              </span>
+            </main>
+            <div id="comment">{{p.body}}</div>
+            {%if p.image%}
+            <div
+              id="p_image"
+              style="background-image: url('{{p.image}}');"
+            ></div>
+            {%endif%}
+
+            <footer>
+              <span>
+                <span class="heart"><i class="fa-regular fa-heart"></i></span>
+              </span>
+              <p>
+                {{p.created_at}}
+              </p>
+
+             
+            </footer>
+          </div>
+        </div> 
+
+         
+      </div>
+
+      {%endfor%}
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="/static/js/style.js"></script>
+  </body>
+</html>
+
+
+              
