@@ -44,3 +44,9 @@ This project is intended for educational purposes and as a demonstration of basi
 This project is licensed under the [MIT License](LICENSE). Feel free to use, modify, and distribute it as per the terms of the license.
 
 Thank you for using Twitter-Clone! If you have any questions or feedback, please don't hesitate to reach out.
+
+## Demo Site
+
+![Screenshot 2024-03-13 at 2 49 05 PM](https://github.com/Karthi905968/Twitter-Clone/assets/144101745/a10e2af0-5366-40d7-8b9d-68907f2d91e9)
+
+
